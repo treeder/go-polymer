@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>unquote</title>
+
+  <meta name="viewport"
+  content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <script src="bower_components/platform/platform.js">
+  </script>
+
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+<link rel="import"
+  href="bower_components/core-header-panel/core-header-panel.html">
+<link rel="import"
+  href="bower_components/core-toolbar/core-toolbar.html">
+<link rel="import"
+  href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="post-list.html">
+  <link rel="import" href="post-card.html">
+
+  <style>
+  html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'RobotoDraft', sans-serif;
+  }
+  core-header-panel {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+core-toolbar {
+  background: #03a9f4;
+  color: white;
+}
+#tabs {
+  width: 100%;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+  .container {
+    width: 80%;
+    margin: 50px auto;
+  }
+  @media (min-width: 481px) {
+    #tabs {
+      width: 200px;
+    }
+    .container {
+      width: 400px;
+    }
+  }
+  </style>
+
+</head>
+
+<body unresolved>
+<core-header-panel>
+
+  <core-toolbar>
+      <paper-tabs id="tabs" selected="all" self-end>
+    <paper-tab name="all">All</paper-tab>
+    <paper-tab name="favorites">Favorites</paper-tab>
+  </paper-tabs>
+  </core-toolbar>
+
+  <div class="container" layout vertical center>
+
+   <post-list show="all"></post-list>
+
+</div>
+
+  <!-- main page content will go here -->
+
+</core-header-panel>
+
+<script>
+  var tabs = document.querySelector('paper-tabs');
+  var list = document.querySelector('post-list');
+
+tabs.addEventListener('core-select', function() {
+  list.show = tabs.selected;
+});
+
+  tabs.addEventListener('core-select', function() {
+    console.log("Selected: " + tabs.selected);
+  });
+</script>
+
+</body>
+
+</html>
