@@ -7,7 +7,7 @@ projects where you want to use Go and Polymer.
 
 This is ready to use on Google App Engine (or wherever you'd like).
 
-## Running
+## Running on App Engine
 
 Since this is ready to use on App Engine, you'll want to use the `goapp` tool.
 
@@ -23,3 +23,11 @@ Change the application name in app.yaml to your application name (from Google De
 goapp deploy
 ```
 
+
+### Running locally
+
+```
+go get github.com/treeder/go-polymer
+cd $GOPATH/src/github.com/treeder/go-polymer
+go run main/main.go
+```
