@@ -29,5 +29,5 @@ goapp deploy
 ```
 go get github.com/treeder/go-polymer
 cd $GOPATH/src/github.com/treeder/go-polymer
-go run main.go
+go run main/main.go
 ```
