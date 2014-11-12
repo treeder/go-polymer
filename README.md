@@ -7,7 +7,14 @@ projects where you want to use Go and Polymer.
 
 This is ready to use on Google App Engine (or wherever you'd like).
 
-## Running
+## Go Get
+
+```
+go get github.com/treeder/go-polymer
+cd $GOPATH/src/github.com/treeder/go-polymer
+```
+
+## Running on App Engine
 
 Since this is ready to use on App Engine, you'll want to use the `goapp` tool.
 
@@ -15,7 +22,7 @@ Since this is ready to use on App Engine, you'll want to use the `goapp` tool.
 goapp serve
 ```
 
-## Deploying
+## Deploying on App Engine
 
 Change the application name in app.yaml to your application name (from Google Developer Console), then:
 
@@ -23,3 +30,15 @@ Change the application name in app.yaml to your application name (from Google De
 goapp deploy
 ```
 
+
+## Running locally
+
+```
+go build && ./go-polymer
+```
+
+Then check http://localhost:8080
+
+## Live Demo
+
+http://go-polymer.appspot.com/
